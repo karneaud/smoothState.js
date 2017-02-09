@@ -674,9 +674,9 @@
               // Allows modifications to the request
               request = options.alterRequest(request);
 
-              options.onBefore($anchor, $container);
+              var b = options.onBefore($anchor, $container);
 
-              load(request);
+              if(b) load(request);
             }
           }
         },
@@ -713,9 +713,9 @@
               }
 
               // Call the onReady callback and set delay
-              options.onBefore($form, $container);
+              var b = options.onBefore($form, $container);
 
-              load(request, undefined, options.allowFormCaching);
+              if(b) load(request, undefined, options.allowFormCaching);
             }
           }
         },
